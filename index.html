@@ -12,7 +12,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url("fond.jpg");
+      background-image: url("background.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -33,7 +33,7 @@
 <body>
 
 <button id="playBtn" aria-label="Lecture audio">
-  <img id="icon" src="play.PNG" class="icon" alt="Play">
+  <img id="icon" src="play.png" class="icon" alt="Play">
 </button>
 
 <audio id="audio" preload="auto">
@@ -48,15 +48,15 @@
   btn.addEventListener('click', () => {
     if (audio.paused) {
       audio.play();
-      icon.src = "play.PNG";
+      icon.src = "play.png";
     } else {
       audio.pause();
-      icon.src = "play.PNG";
+      icon.src = "play.png";
     }
   });
 
   audio.addEventListener('ended', () => {
-    icon.src = "play.PNG";
+    icon.src = "play.png";
   });
 </script>
 
