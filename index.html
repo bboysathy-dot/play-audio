@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bouton Play – Version téléphone</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("fond.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .icon {
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="playBtn" aria-label="Lecture audio">
+  <img id="icon" src="play.PNG" class="icon" alt="Play">
+</button>
+
+<audio id="audio" preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const btn = document.getElementById('playBtn');
+  const audio = document.getElementById('audio');
+  const icon = document.getElementById('icon');
+
+  btn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      icon.src = "play.PNG";
+    } else {
+      audio.pause();
+      icon.src = "play.PNG";
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    icon.src = "play.PNG";
+  });
+</script>
+
+</body>
+</html>
